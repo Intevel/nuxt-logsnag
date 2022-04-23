@@ -1,8 +1,17 @@
 {
   "name": "nuxt-logsnag",
+  "description": "Simple LogSnag integration for Nuxt 3",
   "version": "1.0.0",
   "license": "MIT",
+  "repository": "https://github.com/intevel/nuxt-logsnag",
   "type": "module",
+  "author": {
+    "name": "Conner Luka Bachmann",
+    "email": "github@conner-bachmann.de"
+  },
+  "contributors": [
+    "Intevel <github@conner-bachmann.de>"
+  ],
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
@@ -18,7 +27,9 @@
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "nuxt-module-build && standard-version && git push --follow-tags && npm publish",
+    "lint": "eslint --ext .js,.ts,.vue"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.1"
@@ -26,8 +37,20 @@
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "eslint": "latest",
+    "eslint": "^8.14.0",
     "nuxt": "^3.0.0-rc.1",
     "standard-version": "^9.3.2"
-  }
+  },
+  "keywords": [
+    "nuxt",
+    "logsnag",
+    "nuxtjs",
+    "nuxt-module",
+    "vue3",
+    "nuxt3",
+    "logsnag-module",
+    "nuxt-logsnag",
+    "nuxtlogsnag",
+    "nuxt-community"
+  ]
 }
