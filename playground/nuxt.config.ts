@@ -1,11 +1,9 @@
-import { defineNuxtConfig } from 'nuxt'
-import MyModule from '..'
+import { defineNuxtConfig } from "nuxt";
+import LogSnagModule from "..";
 
 export default defineNuxtConfig({
-  modules: [
-    MyModule
-  ],
-  myModule: {
-    addPlugin: true
-  }
-})
+  modules: [LogSnagModule],
+  logsnag: {
+    token: "",
+  },
+});
