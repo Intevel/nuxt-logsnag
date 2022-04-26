@@ -38,11 +38,13 @@ Firstly, you need to add `nuxt-logsnag` to your Nuxt config.
 }
 ```
 
+Set your api token in the `nuxt.config` or as an environment variable using: LOGSNAG_API_TOKEN
+
 Then you can start using `nuxt-logsnag` in your setup function!
 
 ```vue
 <script setup>
-const { publishEvent } = useLogSnag();
+const { publish } = useLogSnag();
 
 onMounted(async () => {
   var event = {
@@ -53,7 +55,7 @@ onMounted(async () => {
     icon: "🎉",
     notify: true,
   };
-  await publishEvent(event);
+  await publish(event);
 });
 </script>
 ```
