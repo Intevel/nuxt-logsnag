@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-const { publishEvent } = useLogSnag();
+const { publish } = useLogSnag();
 const logSnagTest = async () => {
   try {
     var event = {
@@ -17,7 +17,7 @@ const logSnagTest = async () => {
       icon: "🎉",
       notify: true,
     };
-    var publishedEvent = await publishEvent(event);
+    var publishedEvent = await publish(event);
     console.log("Sended event: " + publishedEvent);
   } catch (e) {}
 };
