@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/intevel/nuxt-logsnag/compare/v1.1.0...v1.2.0) (2022-04-26)
+
+
+### Features
+
+* **main:** renamed publishEvent to publish ([262bec9](https://github.com/intevel/nuxt-logsnag/commit/262bec94769cf132fdd27cd36f469441f2d2534b))
+
+
+### Bug Fixes
+
+* **docs:** method rename ([25f438b](https://github.com/intevel/nuxt-logsnag/commit/25f438b01cd6c0b9f53a2e436f1ae08b113430cb))
+* **main:** public config to private ([6fb9026](https://github.com/intevel/nuxt-logsnag/commit/6fb90265c9d12dfe0578e2f14b2c1830ef245fdb))
+* **main:** removed unnecessary logs ([d03c928](https://github.com/intevel/nuxt-logsnag/commit/d03c928b89b65976f91f47b0e9a1aac2835db0b3))
+
 ## 1.1.0 (2022-04-23)
 
 
