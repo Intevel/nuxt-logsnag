@@ -28,8 +28,8 @@ export default defineNuxtModule<ModuleOptions>({
     if (!options.token) {
       throw new Error("Missing LogSnag API Token");
     }
-    nuxt.options.publicRuntimeConfig.logsnag = defu(
-      nuxt.options.publicRuntimeConfig.logsnag,
+    nuxt.options.privateRuntimeConfig.logsnag = defu(
+      nuxt.options.privateRuntimeConfig.logsnag,
       {
         token: options.token,
       }
