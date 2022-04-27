@@ -18,45 +18,61 @@
 
 ## Setup
 
+Install as development dependency with NPM or Yarn:
+
 ```sh
-yarn add nuxt-logsnag # yarn
-npm i nuxt-logsnag # npm
+yarn add --dev nuxt-logsnag
+# or
+npm i nuxt-logsnag --save-dev
 ```
 
-## Basic usage
+Add `nuxt-logsnag` to your Nuxt config:
 
-Firstly, you need to add `nuxt-logsnag` to your Nuxt config.
+```ts
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
 
-```javascript
-// nuxt.config.js
-
-{
-    modules: ["nuxt-logsnag"],
-    logsnag: {
-        token: "<YOUR_LOGSNAG_API_TOKEN>"
-    }
-}
+export default defineNuxtConfig({
+  modules: ['nuxt-logsnag']
+})
 ```
 
-Set your api token in the `nuxt.config` or as an environment variable using: LOGSNAG_API_TOKEN
+Lastly, add the `LOGSNAG_API_TOKEN` in your `.env`
 
-Then you can start using `nuxt-logsnag` in your setup function!
+```
+LOGSNAG_API_TOKEN=<your_api_token>
+````
+
+Alternately, you can set it in the `nuxt.config` (**less recommended to avoid sharing api token in your code**):
+
+```ts
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
+  modules: ['nuxt-logsnag'],
+  logsnag: {
+    token: '<YOUR_LOGSNAG_API_TOKEN>'
+  }
+})
+```
+
+## Usage
 
 ```vue
 <script setup>
-const { publish } = useLogSnag();
+const { publish } = useLogSnag()
 
 onMounted(async () => {
-  var event = {
-    project: "Test",
-    channel: "nuxttest",
-    event: "Tested Module!",
-    description: "Hey, I just tested the Nuxt3 LogSnag module!",
-    icon: "🎉",
+  await publish({
+    project: 'Test',
+    channel: 'nuxt-test',
+    event: 'Tested Module!',
+    description: 'Hey, I just tested the Nuxt3 LogSnag module!',
+    icon: '🎉',
     notify: true,
-  };
-  await publish(event);
-});
+  })
+})
 </script>
 ```
 
